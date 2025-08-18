@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       { hostname: "picsum.photos", protocol: "https", port: "" },
       { hostname: "gravatar.com", protocol: "https", port: "" },
+      { hostname: "lh3.googleusercontent.com", protocol: "https", port: "" },
     ],
   },
 };

@@ -1,5 +1,20 @@
 @import "tailwindcss";
 
+/* Basic global styles */
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  min-height: 100vh;
+}
+
 @plugin "tailwindcss-animate";
 
 @custom-variant dark (&:is(.dark *));
@@ -124,3 +139,4 @@
     @apply bg-background text-foreground;
   }
 }
+
