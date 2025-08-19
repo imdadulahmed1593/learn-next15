@@ -4,6 +4,11 @@ import { Suspense } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 
 export const revalidate = 60;
+// this is a static page, it will be revalidated every 60 seconds
+// this is done so that the page is not a server component, but a static one. This will make the page load faster and be more efficient.
+// you can check the effect by building the app and npm run start (it will not work in dev mode, only in production mode).
+// create a post at dashboard/create and then go to the home page
+// you will see the post there after 60 seconds, not immediately. This is because the page is static and will be revalidated every 60 seconds.
 
 async function getData() {
   const data = await prisma.blogPost.findMany({

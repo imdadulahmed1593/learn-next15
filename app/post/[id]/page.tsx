@@ -19,6 +19,22 @@ async function getData(id: string) {
   return data;
 }
 
+// this is a dynamic route, but to make it a static page, we can use generateStaticParams
+// this will generate the static params for the page, i.e. the id of the post
+// this is useful for SEO and performance, as it will generate the page at build time and not at runtime
+// this will also make the page a static page, not a dynamically rendered one
+// export async function generateStaticParams() {
+//   const posts = await prisma.blogPost.findMany({
+//     select: {
+//       id: true,
+//     },
+//   });
+
+//   return posts.map((post) => ({
+//     id: post.id,
+//   }));
+// }
+
 type Params = Promise<{ id: string }>;
 const SinglePostPage = async ({ params }: { params: Params }) => {
   const { id } = await params;

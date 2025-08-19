@@ -45,7 +45,7 @@ const BlogPostCard = ({ data }: IAppProps) => {
                   className="object-cover"
                 />
               </div>
-              <p className="text-sm font-medium tex-gray-700">
+              <p className="text-sm font-medium tex-gray-700 dark:text-black">
                 {data.authorName}
               </p>
             </div>

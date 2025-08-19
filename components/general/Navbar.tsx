@@ -13,6 +13,10 @@ import { ModeToggle } from "./ModeToggle";
 
 const Navbar = () => {
   const { getUser } = useKindeBrowserClient();
+  // fetching user on client side
+  // this is done bcz, if we fetch the uses session from server side, this will become a server component. And since this Navbar is present in every page, it will make every page a server/dynamically rendered component. We don't want that. for example, the dashboard/create page should be a static page, not a server component.
+  // So, we fetch the user on client side. By doing that, we can make our dashboard/create (or any other) page a static page according to our needs which will make the page load faster and be more efficient.
+  // now when you build the app, you will see that /dashboard/create is a static page, not a dynamically rendered one.
   const user = getUser();
 
   return (
@@ -65,9 +69,9 @@ const Navbar = () => {
             </RegisterLink>
           </div>
         )}
-        {/* <div className="flex items-center justify-center "> */}
-        <ModeToggle />
-        {/* </div> */}
+        <div className="flex items-center justify-center w-full">
+          <ModeToggle />
+        </div>
       </div>
     </nav>
   );

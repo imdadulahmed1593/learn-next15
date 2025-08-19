@@ -27,6 +27,6 @@ export async function handleSubmission(formData: FormData) {
   });
 
   revalidatePath("/");
-
+  // this will revalidate the home page (i.e. change the cache), but mind you, you have to reload the page to see the changes
   return redirect("/dashboard");
 }

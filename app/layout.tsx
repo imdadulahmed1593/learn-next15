@@ -29,16 +29,18 @@ export default function RootLayout({
     <AuthProvider>
       <html lang="en">
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8`}
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
-            enableSystem
+            // enableSystem
             disableTransitionOnChange
           >
-            <Navbar />
-            {children}
+            <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 min-h-screen">
+              <Navbar />
+              {children}
+            </div>
           </ThemeProvider>
         </body>
       </html>
